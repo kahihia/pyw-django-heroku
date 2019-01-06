@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
 import os
+
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -137,3 +138,5 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", 'wrong_password')
 EMAIL_PORT = os.environ.get("EMAIL_PORT", 25)
 EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", False)
 EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", False)
+
+django_heroku.settings(locals())
