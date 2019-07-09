@@ -1,16 +1,5 @@
-{% extends "base.html" %}
-{% block title %}Задача {{ object.id }}{% endblock %}
-
-{% block main_content %}
-  <h1>Задача</h1>
-  <p><b>Описание</b>: {{ object }}</p>
-  <ul>
-    <li>
-      {{ object.is_completed|yesno:"Выполнена,Не выполнена" }}
-    </li>
-    <li><i class="far fa-calendar-alt"></i>&nbsp;Создана: {{ object.created|date:"Y-b-d H:i" }}</li>
-    <li><i class="far fa-clock"></i>&nbsp;Последнее изменение: {{ object.updated }}</li>
-    <li><i class="far fa-edit"></i>&nbsp;<a href="{% url "tasks:edit" pk=object.pk %}">Редактировать</a></li>
-  </ul>
-  <i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "tasks:list" %}">Назад к списку</a>
-{% endblock %}
+<html>
+<body>
+<iframe width="560" height="315" src="https://instant-bookings.com/ibs/bookings/select-room.aspx?_ga=2.127149455.320321967.1560429177-1515418618.1560429177&currencycode=THB&arrivaldate=13%2f06%2f2019&departuredate=14%2f06%2f2019&night=1&numberofroom=1&roomkey=0&time=00%3a00&numberofadult=2&numberofchildren=0&numberofinfant=0&promotioncode=&display=&hotelkey=%3d%3dQTUV0M" frameborder="0"></iframe>
+</body>
+</html>
