@@ -1,11 +1,11 @@
 from django.urls import path
 
 from . import views
-
+from django.views.generic import TemplateView
 app_name = "tasks"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", TemplateView.as_view(template_name='tasks/details.html')),
     path("list/", views.TaskListView.as_view(), name="list"),
     path("create/", views.TaskCreateView.as_view(), name="create"),
     path("add-task/", views.add_task, name="api-add-task"),
