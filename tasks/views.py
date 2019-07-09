@@ -14,11 +14,8 @@ from tasks.forms import AddTaskForm, TodoItemExportForm, TodoItemForm
 from tasks.models import TodoItem
 
 
-@login_required
-def index(request):
-    return HttpResponse("Примитивный ответ из приложения tasks")
-
-
+def index(DetailView):
+        template_name = "tasks/details.html"
 def complete_task(request, uid):
     t = TodoItem.objects.get(id=uid)
     t.is_completed = True
