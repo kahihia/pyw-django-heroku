@@ -94,9 +94,29 @@
 			<script src="/static/js/jquery-ui.js"></script>
 			  <script>
 					  $(function() {
-						$( "#datepicker,#datepicker1" ).datepicker();
-					  });
+						
+					
+var date = new Date();
+$("#datepicker").datepicker({
+    format: "dd-mm-yyyy",
+    todayBtn: true,
+    autoclose: true,
+    startDate: date
+  })
+  .on("changeDate", function(e) {
+    var checkInDate = e.date, $checkOut = $("#datepicker1");
+    checkInDate.setDate(checkInDate.getDate() + 1);
+    $datepicker1.datepicker("setStartDate", checkInDate);
+    $datepicker1.datepicker("setDate", checkInDate).focus();
+  });
+
+$("#datepicker1").datepicker({
+  format: "dd-mm-yyyy",
+  todayBtn: true,
+  autoclose: true
+});  })
 			  </script>
+
 		<!-- //Calendar -->
 </body>
   
