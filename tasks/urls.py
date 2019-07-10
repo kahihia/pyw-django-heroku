@@ -5,8 +5,8 @@ from django.views.generic import TemplateView
 app_name = "tasks"
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name='tasks/details.html')),
-    path("list/", views.TaskListView.as_view(), name="list"),
+    path("iframe/", TemplateView.as_view(template_name='tasks/details.html'), name='iframe'),
+    path("", TemplateView.as_view(template_name='tasks/create.html')),
     path("create/", views.TaskCreateView.as_view(), name="create"),
     path("add-task/", views.add_task, name="api-add-task"),
     path("complete/<int:uid>", views.complete_task, name="complete"),
