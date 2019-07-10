@@ -104,7 +104,7 @@ $("#datepicker").datepicker({
     startDate: date
   })
   .on("changeDate", function(e) {
-    var checkInDate = e.date, $checkOut = $("#datepicker1");
+    var checkInDate = e.date, $datepicker1 = $("#datepicker1");
     checkInDate.setDate(checkInDate.getDate() + 1);
     $datepicker1.datepicker("setStartDate", checkInDate);
     $datepicker1.datepicker("setDate", checkInDate).focus();
