@@ -15,7 +15,9 @@
   <form action="https://instant-bookings.com/ibs/bookings/select-room.aspx" method="get" class="w3_form_post">
 	
 	<input type="hidden" id="_ga" name="_ga" value="2.127149455.320321967.1560429177-1515418618.1560429177">
-	  <input type="hidden" id="currencycode" name="currencycode" value="THB">
+	  <input type="hidden" id="arrivaldate" name="arrivaldate" value="">
+	  <input type="hidden" id="departuredate" name="departuredate" value="">
+	  <input type="hidden" id="currencycode" name="currencycode" value="">
 				<div class="agileits_main_grid w3_agileits_main_grid">
 					<div class="wthree_grid">
 						<h5>Room Type</h5>
@@ -54,25 +56,12 @@
 			<div class="clear"> </div>
 	</div>
 </div>	
-	<div class="t-datepicker">
-  <div class="t-check-in">
-    <div class="t-dates t-date-check-in">
-      ➜<label class="t-date-info-title">Check In</label>
-    </div>
-    <input type="hidden" class="t-input-check-in" name="arrivaldate">
-    <div class="t-datepicker-day">
-      <table class="t-table-condensed">
-        <!-- Date theme calendar -->
-      </table>
-    </div>
-  </div>
-  <div class="t-check-out">
-    <div class="t-dates t-date-check-out">
-      ➜<label class="t-date-info-title">Check Out</label>
-    </div>
-    <input type="hidden" class="t-input-check-out" name="departuredate">
-  </div>
-</div>	
+<div class="agileits_w3layouts_main_grid w3ls_main_grid">
+				<h5>Check In - Check out Dates</h5>
+			<div class="t-datepicker">  <div class="t-check-in" name ="arrivaldate" required="true"></div>			  <div class="t-check-out" name ='arrivaldate' required="true"></div><div>	
+						</div>
+						<div class="clear"> </div>
+				</div>
 
  <input type="hidden" id="hotelkey" name="hotelkey" value="%3d%3dwTU1UP">
 				<div class="w3_main_grid">
