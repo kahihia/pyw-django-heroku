@@ -3,82 +3,69 @@
    <script src="/static/js/jquery-2.1.3.min.js" type="text/javascript"></script>
 <!-- //js -->
 <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="/static/css/t-datepicker.min.css" rel="stylesheet" type="text/css">
+<link href="/static/css/themes/t-datepicker-blue.css" rel="stylesheet" type="text/css">
+<script src="/static/js/t-datepicker.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
   </head>
 <body>
 	<div class="w3layouts_main_grid">
   <form action="https://instant-bookings.com/ibs/bookings/select-room.aspx?_ga=2.127149455.320321967.1560429177-1515418618.1560429177&currencycode=THB&promotioncode=&display=&hotelkey=%3d%3dQTUV0M" method="post" class="w3_form_post">
-				<div class="w3_agileits_main_grid w3l_main_grid">
-					<div class="agileits_grid">
-						<h5>Name * </h5>
-						<div class="nam">
-							<input type="text" name="First name" placeholder="First Name" required="">
-						</div>
-						<div class="nam1">
-							<input type="text" name="Last name" placeholder="Last Name" required="">
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="w3_agileits_main_grid w3l_main_grid">
-					<div class="agileits_grid">
-						<h5>E-mail </h5>
-							<input type="email" name="Email" placeholder="ex : myname@gmail.com" required="">
-					</div>
-				</div>
+			
 				<div class="agileits_main_grid w3_agileits_main_grid">
 					<div class="wthree_grid">
 						<h5>Room Type</h5>
 						<select id="category" name="category" required="">
-							<option value="none">None</option>
-							<option value="category1">Single Room</option>
-							<option value="category2">Double Room</option>
-							<option value="category3">Suit Room</option>
-							
+						<option value="0">All Room Type</option>
+	<option value="306">Superior Room</option>
+	<option value="307">Deluxe Room (Non Smoking)</option>
+	<option selected="selected" value="1980">Premier Room (Newly Renovated)</option>
+	<option value="1627">Junior Suite (Newly Renovated)</option>
+	<option value="357">Family Room</option>
+	<option value="358">Deluxe Suite</option>
+	<option value="1979">Narai Suite</option>
+
 						</select>
 					</div>
 				</div>
 				<div class="agileits_w3layouts_main_grid w3ls_main_grid">
 					<div class="agileinfo_grid">
-					<h5>Check In & Time *</h5>
-						
+					<h5>Check In - Check out Dates</h5>
+					<div class="t-datepicker">	
 						<div class="agileits_w3layouts_main_gridl">
-							<input class="date" id="datepicker" name="Text" type="text" value="Check In" required="">
-						</div>
+						
+  <div class="t-check-in"></div>
+
+</div>
 						<div class="agileits_w3layouts_main_gridr">
-							<input type="time" name="Time" placeholder=" " required="">
+							  <div class="t-check-out"></div>
 						</div>
 						<div class="clear"> </div>
 					</div>
-				</div>
-				<div class="agileits_w3layouts_main_grid w3ls_main_grid">
-					<div class="agileinfo_grid">
-					<h5>Check Out & Time *</h5>
-						
-						<div class="agileits_w3layouts_main_gridl">
-							<input class="date" id="datepicker1" name="Text" type="text" value="Check Out"  required="">
 						</div>
-						<div class="agileits_w3layouts_main_gridr">
-							<input type="time" name="Time" placeholder=" " required="">
-						</div>
-						<div class="clear"> </div>
-					</div>
 				</div>
+				
 				<div class="agileinfo_main_grid">
 					<div class="agileits_w3layouts_grid">
-						<h5>Number of Guests *</h5>
+						<h5>Adults per Room</h5>
 						<select id="category1" name="category1" required="">
-							<option value="category1">01</option>
-							<option value="category2">02</option>
-							<option value="category3">03</option>
-							<option value="category4">04</option>
-							<option value="category2">05</option>
-							<option value="category3">06</option>
+							<option value="1">1</option>
+	<option selected="selected" value="2">2</option>
+	<option value="3">3</option>
 						</select>
 					</div>
 				</div>
 				
-				
+				<div class="agileinfo_main_grid">
+					<div class="agileits_w3layouts_grid">
+						<h5>Child 4 - 11 yr</h5>
+						<select id="category1" name="category1" required="">
+					<option selected="selected" value="0">0</option>
+					<option value="1">1</option>
+						</select>
+					</div>
+				</div>
 				
 				<div class="w3_main_grid">
 					
@@ -93,28 +80,85 @@
 			<link rel="stylesheet" href="/static/css/jquery-ui.css" />
 			<script src="/static/js/jquery-ui.js"></script>
 			  <script>
-					  $(function() {
-						
-					
-var date = new Date();
-$("#datepicker").datepicker({
-    format: "dd-mm-yyyy",
-    todayBtn: true,
-    autoclose: true,
-    startDate: date
-  })
-  .on("changeDate", function(e) {
-    var checkInDate = e.date, $datepicker1 = $("#datepicker1");
-    checkInDate.setDate(checkInDate.getDate() + 1);
-    $datepicker1.datepicker("setStartDate", checkInDate);
-    $datepicker1.datepicker("setDate", checkInDate).focus();
-  });
+				$('.t-datepicker').tDatePicker({
 
-$("#datepicker1").datepicker({
-  format: "dd-mm-yyyy",
-  todayBtn: true,
-  autoclose: true
-});  })
+  // auto close after selection
+  autoClose        : true,
+
+  // animation speed in milliseconds
+  durationArrowTop : 200,
+
+  // the number of calendars
+  numCalendar    : 2,
+
+  // localization
+  titleCheckIn   : 'Check In',
+  titleCheckOut  : 'Check Out',
+  titleToday     : 'Today',
+  titleDateRange : 'night',
+  titleDateRanges: 'nights',
+  titleDays      : [ 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su' ],
+  titleMonths    : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemper', 'October', 'November', "December"],
+
+  // the max length of the title
+  titleMonthsLimitShow : 3,
+
+  // replace moth names
+  replaceTitleMonths : null,
+
+  // e.g. 'dd-mm-yy'
+  showDateTheme   : null,
+
+  // icon options
+  iconArrowTop : true,
+  iconDate     : '&#x279C;',
+  arrowPrev    : '&#x276E;',
+  arrowNext    : '&#x276F;',
+  // https://fontawesome.com/v4.7.0/icons/
+  // iconDate: '<i class="li-calendar-empty"></i><i class="li-arrow-right"></i>',
+  // arrowPrev: '<i class="fa fa-chevron-left"></i>',
+  // arrowNext: '<i class="fa fa-chevron-right"></i>',
+
+  // shows today title
+  toDayShowTitle       : true, 
+
+  // showss dange range title
+  dateRangesShowTitle  : true,
+
+  // highlights today
+  toDayHighlighted     : false,
+
+  // highlights next day
+  nextDayHighlighted   : false,
+
+  // an array of days
+  daysOfWeekHighlighted: [0,6],
+
+  // custom date format
+  formatDate      : 'yyyy-mm-dd',
+
+  // dateCheckIn: '25/06/2018',  // DD/MM/YY
+  // dateCheckOut: '26/06/2018', // DD/MM/YY
+  dateCheckIn  : null,
+  dateCheckOut : null,
+  startDate    : null,
+  endDate      : null,
+
+  // limits the number of months
+  limitPrevMonth : 0,
+  limitNextMonth : 11,
+
+  // limits the number of days
+  limitDateRanges    : 31,
+
+  // true -> full days || false - 1 day
+  showFullDateRanges : false, 
+
+  // DATA HOLIDAYS
+  // Data holidays
+  fnDataEvent   : null
+
+});	 
 			  </script>
 
 		<!-- //Calendar -->
