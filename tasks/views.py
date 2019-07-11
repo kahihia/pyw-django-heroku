@@ -48,20 +48,9 @@ class TaskListView(LoginRequiredMixin, ListView):
         return qs.filter(owner=u)
 
 
-class TaskCreateView(LoginRequiredMixin, View):
-    def post(self, request, *args, **kwargs):
-        form = TodoItemForm(request.POST)
-        if form.is_valid():
-            new_task = form.save(commit=False)
-            new_task.owner = request.user
-            new_task.save()
-            return redirect(reverse("tasks:list"))
-
-        return render(request, "tasks/create.html", {"form": form})
-
-    def get(self, request, *args, **kwargs):
-        form = TodoItemForm()
-        return render(request, "tasks/create.html", {"form": form})
+class TaskCreateView(request):
+    url= request.build_absolute_uri()
+    return render(request, "tasks/create.html", {"url": url})
 
 
 class TaskEditView(LoginRequiredMixin, View):
