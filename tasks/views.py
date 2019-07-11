@@ -48,7 +48,7 @@ class TaskListView(LoginRequiredMixin, ListView):
         return qs.filter(owner=u)
 
 
-class TaskCreateView(request):
+def TaskCreateView(request):
     url= request.build_absolute_uri()
     return render(request, "tasks/details.html", {"url": url})
 
