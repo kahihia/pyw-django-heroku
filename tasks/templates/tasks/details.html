@@ -191,10 +191,11 @@ function submitsearch() {
             url: $(this).attr('action'),
             data: $(this).serialize(),
             success: function (data) {
-    $("#iframe").html("<iframe  height='600px' width='400px' src='{{data}}'> </iframe>");
-            },
+    $("#iframe").html("<iframe  height='600px' width='400px' src= data> </iframe>");
+            console.log(data)
+	    },
             error: function(data) {
-             $("#iframe").html("<iframe  height='600px' width='400px' src='{{data}}'> </iframe>");
+             $("#iframe").html("<iframe  height='600px' width='400px' src= data > </iframe>");
             }
         });
         return false;
