@@ -154,7 +154,17 @@
   // Data holidays
   fnDataEvent   : null
 
-});	 
+});
+				  
+ $('.t-datepicker').tDatePicker()
+.on('afterCheckOut',function(e, dataDate) {
+
+   document.getElementById("arrivaldate").value = new Date(dataDate[0])  // check-in
+
+  document.getElementById("departuredate").value =new Date(dataDate[1])   // check-out
+
+})
+
 			  </script>
 
 		<!-- //Calendar -->
