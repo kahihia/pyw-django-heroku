@@ -186,30 +186,11 @@ $('#booking').on('submit', function(event){
 });
    
 function submitsearch() {
-        $.ajax({
-            type: 'get',
-            url: 'https://instant-bookings.com/ibs/bookings/select-room.aspx',
-            data: {   
-            roomkey : $('#roomkey').val(),
-           numberofinfant:  $('#numberofinfant').val(),
-            numberofadult:  $('#numberofadult').val(),
-	     arrivaldate:  $('#arrivaldate').val(),
-	     _ga:  $('#_ga').val(),
-	     currencycode:  $('#currencycode').val(),
-            hotelname:  $('#hotelname').val(),
-	     hotelkey:  $('#hotelkey').val()
-	    }
-		,
-            success: function (data) {
-    $("#iframe").html(data);
-            console.log(data)
-	    },
-            error: function(data) {
-             $("#iframe").html(data);
-            }
-        });
-        return false;
-    };
+    $("#frame").attr("src", "https://instant-bookings.com/ibs/bookings/select-room.aspx?numberofinfant="+$('#numberofinfant').val()+"?roomkey"+$('#roomkey').val()+"?numberofadult="+$('#numberofadult').val()+"?arrivaldate="+$('#arrivaldate').val()+"?_ga="+$('#_ga').val()+"?currencycode="+$('#currencycode').val()+"?hotelname="+$('#hotelname').val()+"?hotelkey="+$('#hotelkey').val()
+           ,
+            
+            
+    
 </script>
 		<!-- //Calendar -->
 </body>
