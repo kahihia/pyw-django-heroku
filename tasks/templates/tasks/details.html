@@ -179,8 +179,13 @@ co = String(dd1).padStart(2, '0')+'/'+String(mm1).padStart(2, '0')+'/'+yyyy1;
 
 			  </script>
 <script type="text/javascript">
-    var frm = $('#booking');
-    frm.submit(function () {
+	// Submit post on submit
+$('#booking').on('submit', function(event){
+    event.preventDefault();
+    submitsearch();
+});
+   
+function submitsearch() {
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -194,7 +199,7 @@ co = String(dd1).padStart(2, '0')+'/'+String(mm1).padStart(2, '0')+'/'+yyyy1;
             }
         });
         return false;
-    });
+    };
 </script>
 		<!-- //Calendar -->
 </body>
