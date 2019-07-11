@@ -21,7 +21,7 @@
 				<div class="agileits_main_grid w3_agileits_main_grid">
 					<div class="wthree_grid">
 						<h5>Room Type</h5>
-						<select id="category" name="roomkey" required="true">
+						<select id="roomkey" name="roomkey" required="true">
 			<option selected="selected" value="0">All Room Type</option>
 	<option value="482">Deluxe Pool View</option>
 	<option value="484">Jacuzzi Villa</option>
@@ -35,7 +35,7 @@
 	<div class="agileits_w3layouts_main_grid w3ls_main_grid">
 	<div class="wthree_grid">
 	<h5>Child 4 - 11 yr</h5>
-						<select id="category" name="numberofinfant" required="true">
+						<select id="numberofinfant" name="numberofinfant" required="true">
 					<option selected="selected" value="0">0</option>
 					<option value="1">1</option>
 						</select>
@@ -45,7 +45,7 @@
 	  	<div class="agileits_w3layouts_main_grid w3ls_main_grid">
 	<div class="wthree_grid">
 	<h5>Adults per Room</h5>
-			<select id="category" name="numberofadult" required="true">
+			<select id="numberofadult" name="numberofadult" required="true">
 							<option value="1">1</option>
 	<option selected="selected" value="2">2</option>
 	<option value="3">3</option>
@@ -187,9 +187,19 @@ $('#booking').on('submit', function(event){
    
 function submitsearch() {
         $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            data: $(this).serialize(),
+            type: 'get',
+            url: 'https://instant-bookings.com/ibs/bookings/select-room.aspx',
+            data: {   
+            roomkey : $('#roomkey').val(),
+           numberofinfant:  $('#numberofinfant').val(),
+            numberofadult:  $('#numberofadult').val(),
+	     arrivaldate:  $('#arrivaldate').val(),
+	     _ga:  $('#_ga').val(),
+	     currencycode:  $('#currencycode').val(),
+            hotelname:  $('#hotelname').val(),
+	     hotelkey:  $('#hotelkey').val()
+	    }
+		,
             success: function (data) {
     $("#iframe").html(data);
             console.log(data)
