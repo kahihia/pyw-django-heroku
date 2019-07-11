@@ -191,8 +191,7 @@ function submitsearch() {
             url: frm.attr('action'),
             data: frm.serialize(),
             success: function (data) {
-                $("#iframe").html("<iframe id="encoder_iframe" height="600px" width="400px" src="{{data}}">
-</iframe>");
+    $("#iframe").html("<iframe  height='600px' width='400px' src='{{data}}'> </iframe>");
             },
             error: function(data) {
                 $("#MESSAGE-DIV").html("Something went wrong!");
