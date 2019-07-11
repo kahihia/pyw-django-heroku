@@ -72,8 +72,8 @@
 				</div>
 			</form>
 		</div>
-			<iframe id="encoder_iframe" height="600px" width="400px" src="{{url}}">
-</iframe>
+	{% if url %}		<iframe id="encoder_iframe" height="600px" width="400px" src="{{url}}">
+</iframe>{% endif %}
   	<!-- Calendar -->
 			<link rel="stylesheet" href="/static/css/jquery-ui.css" />
 			<script src="/static/js/jquery-ui.js"></script>
