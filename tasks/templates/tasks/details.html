@@ -164,9 +164,10 @@ var mm = ci.getMonth()+01;
 var yyyy = ci.getFullYear();
 var dd1 = co.getDate();
 var mm1 = co.getMonth()+01; 
-var yyyy1 = co.getFullYear();					
-ci = dd+'/'+mm+'/'+yyyy;
-co = dd1+'/'+mm1+'/'+yyyy1;					
+var yyyy1 = co.getFullYear();	
+					
+ci =String(dd).padStart(2, '0') +'/'+String(mm).padStart(2, '0');+'/'+yyyy;
+co = String(dd1).padStart(2, '0');+'/'+String(mm1).padStart(2, '0');+'/'+yyyy1;	
 					
    document.getElementById("arrivaldate").value = ci  // check-in
 
