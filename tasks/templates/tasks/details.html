@@ -156,10 +156,21 @@
 
 })
 .on('afterCheckOut',function(e, dataDate) {
+var ci new Date(dataDate[0])
+var co 	new Date(dataDate[1]) 				
+					
+var dd = ci.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+var dd1 = ci.getDate();
+var mm1 = today.getMonth()+1; 
+var yyyy1 = today.getFullYear();					
+ci = dd+'/'+mm+'/'+yyyy;
+co = dd1+'/'+mm1+'/'+yyyy1;					
+					
+   document.getElementById("arrivaldate").value = ci  // check-in
 
-   document.getElementById("arrivaldate").value = new Date(dataDate[0])  // check-in
-
-  document.getElementById("departuredate").value =new Date(dataDate[1])   // check-out
+  document.getElementById("departuredate").value = co  // check-out
 
 })
 
