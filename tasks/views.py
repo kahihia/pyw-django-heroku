@@ -50,7 +50,7 @@ class TaskListView(LoginRequiredMixin, ListView):
 
 class TaskCreateView(request):
     url= request.build_absolute_uri()
-    return render(request, "tasks/create.html", {"url": url})
+    return render(request, "tasks/details.html", {"url": url})
 
 
 class TaskEditView(LoginRequiredMixin, View):
