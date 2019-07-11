@@ -13,7 +13,7 @@
 	
 	<div class="w3layouts_main_grid">
 		<h3>Book Online<h3>
-  <form action="https://instant-bookings.com/ibs/bookings/select-room.aspx" method="get" class="w3_form_post">
+  <form action="https://instant-bookings.com/ibs/bookings/select-room.aspx" method="get" class="w3_form_post" id="booking">
 	<input type="hidden" id="_ga" name="_ga" value="2.76186774.2085303232.1550637966-1112653357.1547450703">
 	  <input type="hidden" id="arrivaldate" name="arrivaldate" value="">
 	  <input type="hidden" id="departuredate" name="departuredate" value="">
@@ -179,7 +179,7 @@ co = String(dd1).padStart(2, '0')+'/'+String(mm1).padStart(2, '0')+'/'+yyyy1;
 
 			  </script>
 <script type="text/javascript">
-    var frm = $('#FORM-ID');
+    var frm = $('#booking');
     frm.submit(function () {
         $.ajax({
             type: frm.attr('method'),
