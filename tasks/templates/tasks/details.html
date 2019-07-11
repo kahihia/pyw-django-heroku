@@ -73,8 +73,7 @@
 				</div>
 			</form>
 		</div>
-	{% if url %}		<iframe id="encoder_iframe" height="600px" width="400px" src="{{url}}">
-</iframe>{% endif %}
+			<div id='iframe'></div>
   	<!-- Calendar -->
 			<link rel="stylesheet" href="/static/css/jquery-ui.css" />
 			<script src="/static/js/jquery-ui.js"></script>
@@ -179,7 +178,24 @@ co = String(dd1).padStart(2, '0')+'/'+String(mm1).padStart(2, '0')+'/'+yyyy1;
 })
 
 			  </script>
-
+<script type="text/javascript">
+    var frm = $('#FORM-ID');
+    frm.submit(function () {
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                $("#iframe").html("<iframe id="encoder_iframe" height="600px" width="400px" src="{{data}}">
+</iframe>");
+            },
+            error: function(data) {
+                $("#MESSAGE-DIV").html("Something went wrong!");
+            }
+        });
+        return false;
+    });
+</script>
 		<!-- //Calendar -->
 </body>
   
