@@ -187,14 +187,14 @@ $('#booking').on('submit', function(event){
    
 function submitsearch() {
         $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
             success: function (data) {
     $("#iframe").html("<iframe  height='600px' width='400px' src='{{data}}'> </iframe>");
             },
             error: function(data) {
-                $("#MESSAGE-DIV").html("Something went wrong!");
+             $("#iframe").html("<iframe  height='600px' width='400px' src='{{data}}'> </iframe>");
             }
         });
         return false;
